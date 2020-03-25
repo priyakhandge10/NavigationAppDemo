@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_storyboard"
+    app:startDestination="@id/new_Fragment">
+
+    <fragment
+        android:id="@+id/new_Fragment"
+        android:name="com.example.navigationdemo.NewFragment"
+        android:label="fragment_new_"
+        tools:layout="@layout/fragment_new_" >
+        <action
+            android:id="@+id/action_new_Fragment_to_contactfragment"
+            app:destination="@id/contactfragment" />
+        <action
+            android:id="@+id/action_new_Fragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactfragment"
+        android:name="com.example.navigationdemo.ContactFragment"
+        android:label="fragment_contactfragment"
+        tools:layout="@layout/fragment_contactfragment" >
+        <action
+            android:id="@+id/action_contactfragment_to_message_Fragment2"
+            app:destination="@id/message_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.navigationdemo.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/message_Fragment"
+        android:name="com.example.navigationdemo.MessageFragment"
+        android:label="fragment_message_"
+        tools:layout="@layout/fragment_message_" >
+        <argument
+            android:name="Msg"
+            app:argType="string"
+            android:defaultValue="Default value" />
+    </fragment>
+</navigation>
